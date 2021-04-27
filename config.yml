@@ -3,7 +3,7 @@ url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
   dir: "./"                  # dir containing engines, relative to this project
-  name: "stockfishmulti"        # binary name of the engine to use
+  name: "stockfishmodern"        # binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   uci_ponder: true           # think on opponent time; only works if "protocol" is "uci"
   polyglot:
@@ -54,17 +54,17 @@ challenge:                    # incoming challenges
   min_increment: 0            # minimum amount of increment to accept a challenge
   max_base: 315360000         # maximum amount of base time to accept a challenge. the max is 315360000 (10 years)
   min_base: 0                 # minimum amount of base time to accept a challenge
-  variants:                   # chess variants to decline (http://lichess.org/variant)
+  variants:                   # chess variants to accept (http://lichess.org/variant)
     - standard
-    - 
-    - 
-    -
-    - 
-    - 
-    -
-    - 
-    - 
-    - 
+    - fromPosition
+#   - antichess
+#   - atomic
+    - chess960
+#   - crazyhouse
+#   - horde
+#   - kingOfTheHill
+#   - racingKings
+#   - threeCheck
   time_controls:              # time controls to accept
     - bullet
     - blitz
@@ -73,4 +73,4 @@ challenge:                    # incoming challenges
 #   - correspondence
   modes:                      # game modes to accept
     - casual                  # unrated games
-    - rated                   # rated games - must comment if the engine doesn't try to win
+    - rated                   
